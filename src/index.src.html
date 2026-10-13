@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método FMB · Plano de Estudos</title>
+<meta name="description" content="Plano de estudos para concursos pelo método do Prof. Flávio Monteiro de Barros: grade semanal fixa, aula nova + revisão semanal acumulada, caderno de anotações.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍀</text></svg>">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--ink:#1e232b;--mut:#6b7280;--line:#e5e7eb;--soft:#f8fafc;
+  --green:#15803d;--green2:#dcfce7;--amber:#b45309;--amber2:#fef3c7;--red:#b91c1c;--red2:#fee2e2;--note:#fffdf5;--chip:#eef2f7}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a21;--ink:#e6e8ec;--mut:#9aa3b2;--line:#2a2f3a;--soft:#1c2029;
+  --green:#4ade80;--green2:#123821;--amber:#fbbf24;--amber2:#3a2c0b;--red:#f87171;--red2:#3b1414;--note:#1d1b14;--chip:#232834}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+header{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--line);padding:10px 16px}
+.hrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+h1{font-size:18px;margin:0;line-height:1.2}
+h1 small{display:block;color:var(--mut);font-weight:500;font-size:12px}
+.pwrap{flex:1;min-width:200px;max-width:380px}
+.bar{height:9px;background:var(--chip);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--green);width:0;transition:width .25s}
+.pmeta{display:flex;justify-content:space-between;font-size:12px;color:var(--mut);margin-top:3px;gap:8px}
+.cd{font-size:13px;background:var(--green2);color:var(--green);padding:4px 10px;border-radius:99px;font-weight:700;white-space:nowrap}
+select.plan{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:5px 8px;font-size:13px;max-width:260px}
+nav.tabs{display:flex;gap:4px;max-width:1200px;margin:8px auto 0;overflow-x:auto}
+nav.tabs button{border:0;background:none;padding:7px 12px;border-radius:8px;cursor:pointer;color:var(--mut);font-weight:600;font-size:13.5px;white-space:nowrap}
+nav.tabs button.on{background:var(--chip);color:var(--ink)}
+main{max-width:1200px;margin:0 auto;padding:14px 16px 70px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+h2{font-size:16px;margin:0 0 8px}
+h3{font-size:14px;margin:12px 0 6px}
+.mut{color:var(--mut)} .sm{font-size:12.5px}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:9px;padding:6px 12px;cursor:pointer;font-size:13px}
+.btn:hover{border-color:var(--mut)}
+.btn.pri{background:var(--green);border-color:var(--green);color:#fff;font-weight:700}
+@media (prefers-color-scheme:dark){.btn.pri{color:#06240f}}
+.btn.warn{border-color:var(--red);color:var(--red)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.mile{display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;margin-bottom:12px}
+.mile span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:3px 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.day.today{outline:2px solid var(--green)}
+.dhead{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.dhead b{font-size:15px}
+.pill{font-size:10.5px;border-radius:99px;padding:2px 8px;font-weight:700;white-space:nowrap;background:var(--chip);color:var(--mut)}
+.pill.g{background:var(--green);color:#fff} .pill.a{background:var(--amber2);color:var(--amber)} .pill.r{background:var(--red2);color:var(--red)}
+.sess{border:1px solid var(--line);border-left:4px solid var(--c,#999);border-radius:10px;padding:9px 11px;background:var(--soft)}
+.sess.done{opacity:.72}
+.sess.done .stitle::after{content:" ✔";color:var(--green)}
+.shead{display:flex;justify-content:space-between;gap:6px;align-items:baseline}
+.subj{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--c)}
+.stitle{font-weight:700;font-size:13.5px;margin:2px 0 4px}
+.step{margin-top:7px;padding-top:7px;border-top:1px dashed var(--line)}
+.step>b{font-size:11.5px;text-transform:uppercase;letter-spacing:.3px;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin:5px 0}
+.chips span{font-size:11.5px;background:var(--chip);border-radius:99px;padding:1px 8px}
+ul.subs{margin:3px 0 4px;padding-left:18px} ul.subs li{font-size:12.4px;margin:1.5px 0}
+details>summary{cursor:pointer;font-size:13px;font-weight:600}
+.chk{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.chk button{flex:1;min-width:96px;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:5px 4px;font-size:11.5px;cursor:pointer;color:var(--mut)}
+.chk button.on{background:var(--green);border-color:var(--green);color:#fff;font-weight:700}
+@media (prefers-color-scheme:dark){.chk button.on{color:#06240f}}
+textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--note);resize:vertical;font-size:13px;line-height:1.45}
+textarea.note{min-height:64px}
+textarea:focus,input:focus,select:focus{outline:2px solid #f59e0b55;border-color:#f59e0b}
+input[type=date],input[type=number],input[type=text]{border:1px solid var(--line);border-radius:8px;padding:5px 8px;background:var(--card)}
+.hot{color:#ea580c;font-weight:700;font-size:12px}
+.weeknav{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.weeknav b{font-size:15px}
+table.gridfix{border-collapse:collapse;width:100%;font-size:13px}
+table.gridfix th,table.gridfix td{border:1px solid var(--line);padding:7px;vertical-align:top;text-align:left}
+table.gridfix th{background:var(--soft);font-size:12px}
+.tag{display:inline-block;border-radius:7px;padding:2px 7px;margin:1px 0;font-size:12px;font-weight:600;color:#fff;background:var(--c)}
+table.list{border-collapse:collapse;width:100%;font-size:13px}
+table.list td,table.list th{border-bottom:1px solid var(--line);padding:6px;text-align:left}
+table.list input{width:70px}
+.drop{border:2px dashed var(--line);border-radius:12px;padding:14px;text-align:center;cursor:pointer;background:var(--soft)}
+.drop.ok{border-color:var(--green);background:var(--green2)}
+.drop b{display:block}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:720px){.two{grid-template-columns:1fr}}
+.msg{font-size:13px;border-radius:10px;padding:8px 10px;margin:8px 0;background:var(--amber2);color:var(--amber)}
+.msg.ok{background:var(--green2);color:var(--green)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.f{display:flex;flex-direction:column;gap:4px;font-size:12.5px}.f.full{grid-column:1/-1}
+.f input:not([type=checkbox]),.f select{width:100%;border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--card)}
+.daysel label{margin-right:8px;font-size:13px;white-space:nowrap}
+.modal{position:fixed;inset:0;background:#0009;z-index:50;display:flex;align-items:center;justify-content:center;padding:16px}
+.modal .box{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:90vh;overflow:auto;padding:18px}
+.timer{height:6px;background:var(--chip);border-radius:99px;overflow:hidden;margin:8px 0}
+.timer i{display:block;height:100%;background:var(--amber);width:0}
+.notebox{white-space:pre-wrap;background:var(--note);border:1px solid var(--line);border-radius:10px;padding:12px;min-height:120px;font-size:14px}
+.method ol li,.method ul li{margin:4px 0}
+.formula{font-size:22px;font-weight:800;text-align:center;margin:6px 0}
+.empty{color:var(--mut);font-size:13px;padding:6px 0}
+#printArea{display:none}
+@media print{body.printing>*:not(#printArea){display:none!important}body.printing #printArea{display:block}
+ body.printing{background:#fff;color:#000;font:12pt/1.45 Georgia,"Times New Roman",serif}
+ #printArea h1{font-size:20pt;margin:0 0 4pt}#printArea h2{font-size:15pt;margin:18pt 0 6pt;border-bottom:1.5pt solid #000;break-after:avoid}
+ #printArea h3{font-size:12.5pt;margin:12pt 0 3pt;break-after:avoid}#printArea .tp{font-style:italic;color:#444;font-size:10.5pt;margin:0 0 4pt}
+ #printArea .nt{white-space:pre-wrap;margin:0 0 4pt}#printArea ol{margin:2pt 0 6pt}#printArea .aula{break-inside:avoid-page}
+ #printArea .ln{border-bottom:.6pt solid #999;height:16pt}#printArea .sub{color:#555;font-size:10pt}
+ body:not(.printing) header nav,body:not(.printing) .chk,body:not(.printing) .btn,body:not(.printing) textarea{display:none!important}}
+.expbox .opt{display:flex;flex-wrap:wrap;gap:14px;margin:8px 0;font-size:13px}.expbox .opt label{white-space:nowrap}
+</style>
+</head>
+<body>
+<header>
+  <div class="hrow">
+    <h1>🍀 <span id="pname">Plano FMB</span><small>Método FMB — Prof. Flávio Monteiro de Barros · C = E + M</small></h1>
+    <div class="pwrap"><div class="bar"><i id="pbar"></i></div><div class="pmeta"><span id="ptxt"></span><span id="pdays"></span></div></div>
+    <div class="row">
+      <span class="cd" id="countdown">—</span>
+      <select class="plan" id="planSel" title="trocar de plano"></select>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <button data-v="hoje" class="on">📍 Hoje</button>
+    <button data-v="crono">🗓️ Cronograma</button>
+    <button data-v="grade">🧱 Grade fixa</button>
+    <button data-v="caderno">📓 Caderno</button>
+    <button data-v="novo">➕ Novo plano</button>
+    <button data-v="metodo">📘 Método</button>
+    <button data-v="dados">💾 Dados</button>
+  </nav>
+</header>
+<main id="app"></main>
+<div id="modal"></div>
+<div id="printArea"></div>
+
+<script>
+/* ============================================================
+   Dados do plano-modelo (PGM Curitiba 2026) — matérias e tópicos
+   ============================================================ */
+const TEMPLATE = /*__TEMPLATE__*/null;
+
+/* ============================== utilitários ============================== */
+const LS_PLANS='fmb-plans-v3', LS_PROG='fmb-prog-v3', LS_CUR='fmb-cur-v3';
+const PALETTE=['#2563eb','#7c3aed','#b45309','#0f766e','#16a34a','#ea580c','#db2777','#dc2626','#4f46e5','#64748b','#0891b2','#a16207','#9333ea','#059669','#e11d48','#475569','#0284c7','#65a30d'];
+const WD=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+const WDL=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const iso=dt=>`${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`;
+const parseISO=s=>{const[y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
+const addDays=(s,n)=>{const d=parseISO(s);d.setDate(d.getDate()+n);return iso(d)};
+const dow=s=>parseISO(s).getDay();
+const fmt=s=>{const[,m,d]=s.split('-');return `${d}/${m}`};
+const mondayOf=s=>addDays(s,-((dow(s)+6)%7));
+const diffDays=(a,b)=>Math.round((parseISO(b)-parseISO(a))/864e5);
+const norm=s=>String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+const uid=()=>Math.random().toString(36).slice(2,9);
+const TODAY=iso(new Date());
+function lsGet(k,def){try{const v=JSON.parse(localStorage.getItem(k)||'null');return v??def}catch(e){return def}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){alert('Não foi possível salvar no navegador (armazenamento cheio ou bloqueado). Use 💾 Dados → exportar.');return false}}
+
+/* ============================== estado ============================== */
+let PLANS=lsGet(LS_PLANS,[]);
+let PROG=lsGet(LS_PROG,{});
+let CUR=lsGet(LS_CUR,null);
+let VIEW='hoje', WEEK=null, CADSUB=null;
+let WIZ=null; // estado do assistente
+
+function plan(){return PLANS.find(p=>p.id===CUR)||PLANS[0]}
+function prog(){const p=plan();if(!p)return{};return PROG[p.id]=PROG[p.id]||{sess:{},notes:{},quest:{}}}
+function savePlans(){lsSet(LS_PLANS,PLANS);lsSet(LS_CUR,CUR)}
+function saveProg(){lsSet(LS_PROG,PROG)}
+function subj(p,id){return p.subjects.find(s=>s.id===id)}
+
+/* ============================================================
+   GERADOR DO PLANO — fiel ao método FMB
+   - grade semanal FIXA (cada matéria tem seu dia/horário)
+   - cada sessão: 1ª metade revisão acumulada, 2ª metade aula nova
+   ============================================================ */
+function buildGrid(subjects,days,S){
+  const T=days.length*S;
+  const sorted=[...subjects].sort((a,b)=>(b.weight||0)-(a.weight||0));
+  const cells=[];
+  if(sorted.length>=T){
+    for(let i=0;i<T;i++)cells.push([]);
+    sorted.forEach((s,i)=>cells[i%T].push(s.id)); // matérias leves se alternam semana sim/semana não
+  }else{
+    const extra=T-sorted.length, W=sorted.reduce((a,s)=>a+Math.max(+s.weight||0,.1),0);
+    const q=sorted.map(s=>1+extra*Math.max(+s.weight||0,.1)/W);
+    const base=q.map(Math.floor);let rem=T-base.reduce((a,b)=>a+b,0);
+    q.map((x,i)=>[x-base[i],i]).sort((a,b)=>b[0]-a[0]).slice(0,rem).forEach(([,i])=>base[i]++);
+    sorted.forEach((s,i)=>{for(let k=0;k<base[i];k++)cells.push([s.id])});
+  }
+  const grid={};days.forEach(d=>grid[d]=[]);
+  const groups={};cells.forEach(c=>{const k=c.join('|');(groups[k]=groups[k]||[]).push(c)});
+  Object.values(groups).sort((a,b)=>b.length-a.length).forEach(g=>{
+    const key=g[0].join('|');
+    g.forEach((cell,j)=>{
+      const ideal=Math.floor((j+.5)*days.length/g.length);
+      const cand=days.map((d,di)=>({d,has:grid[d].some(c=>c.join('|')===key)?1:0,n:grid[d].length,dist:Math.abs(di-ideal)})).filter(x=>x.n<S);
+      cand.sort((a,b)=>(a.has-b.has)||(a.dist-b.dist)||(a.n-b.n));
+      grid[cand[0].d].push(cell);
+    });
+  });
+  return grid;
+}
+
+function buildAulas(s,studyN){
+  let units=s.topics.map((t,ti)=>({ti,subs:[...(t.subs||[])]}));
+  // poucos tópicos e muitas sessões → divide os tópicos mais longos em partes
+  while(units.length<studyN){
+    let bi=-1,bl=3;units.forEach((u,i)=>{if(u.subs.length>bl){bl=u.subs.length;bi=i}});
+    if(bi<0)break;
+    const u=units[bi],h=Math.ceil(u.subs.length/2);
+    units.splice(bi,1,{ti:u.ti,subs:u.subs.slice(0,h)},{ti:u.ti,subs:u.subs.slice(h)});
+  }
+  const cnt={},seen={};units.forEach(u=>cnt[u.ti]=(cnt[u.ti]||0)+1);
+  units.forEach(u=>{seen[u.ti]=(seen[u.ti]||0)+1;u.part=cnt[u.ti]>1?`parte ${seen[u.ti]}/${cnt[u.ti]}`:''});
+  // muitos tópicos e poucas sessões → agrupa tópicos consecutivos na mesma aula
+  const aulas=[];
+  if(units.length<=studyN||studyN<=0){units.forEach(u=>aulas.push([u]))}
+  else{let i=0;for(let a=0;a<studyN;a++){const take=Math.round((a+1)*units.length/studyN)-Math.round(a*units.length/studyN);aulas.push(units.slice(i,i+take));i+=take}}
+  return aulas.map((u,i)=>({n:i+1,units:u}));
+}
+
+function generate(base){
+  const p=JSON.parse(JSON.stringify(base));
+  p.days=(p.days&&p.days.length?p.days:[1,2,3,4,5]).map(Number).sort((a,b)=>a-b);
+  p.slots=Math.max(1,Math.min(6,+p.slots||2));
+  p.subjects.forEach((s,i)=>{s.id=s.id||('s'+uid());s.color=s.color||PALETTE[i%PALETTE.length];s.weight=+s.weight||1});
+  p.grid=buildGrid(p.subjects,p.days,p.slots);
+  const hol=new Set(p.holidays||[]);
+  const dates=[];for(let d=p.start;d<p.exam;d=addDays(d,1))if(p.days.includes(dow(d))&&!hol.has(d))dates.push(d);
+  const reserve=Math.min(+p.reserveDays||0,Math.max(0,dates.length-1));
+  const finalSet=new Set(dates.slice(dates.length-reserve));
+  const m0=mondayOf(p.start), raw=[];
+  dates.forEach(d=>{
+    const w=Math.floor(diffDays(m0,d)/7);
+    (p.grid[dow(d)]||[]).forEach((cell,slot)=>{if(!cell.length)return;raw.push({k:`${d}#${slot}`,date:d,slot,sid:cell[w%cell.length],fin:finalSet.has(d)})});
+  });
+  p.aulas={};
+  p.subjects.forEach(s=>{
+    const mine=raw.filter(r=>r.sid===s.id&&!r.fin);
+    const studyN=Math.max(1,mine.length-Math.floor(mine.length*(+p.reviewShare||0)));
+    p.aulas[s.id]=buildAulas(s,Math.min(studyN,mine.length||1));
+    let n=0;mine.forEach(r=>{if(n<p.aulas[s.id].length){r.type='study';r.aula=++n;p.aulas[s.id][n-1].date=r.date}else{r.type='review'}});
+  });
+  raw.forEach(r=>{if(r.fin)r.type='review'});
+  p.sessions=raw;
+  p.generated=new Date().toISOString();
+  return p;
+}
+
+/* revisão acumulada: aulas anteriores da mesma matéria */
+function reviewList(p,s){
+  const all=(p.aulas[s.sid]||[]).filter(a=>a.date&&(a.date<s.date||(a.date===s.date&&s.type==='study'&&a.n<s.aula)));
+  if(s.type==='study'){const prev=all.filter(a=>a.n<s.aula);return p.revWindow==='4'?prev.slice(-4):prev}
+  return all;
+}
+function sessDone(p,s){
+  const c=prog().sess[s.k]||{};
+  if(s.type==='review')return !!c.r;
+  const needR=reviewList(p,s).length>0;
+  return (!needR||c.r)&&c.l&&c.m&&c.q;
+}
+
+/* ============================== render geral ============================== */
+function render(){
+  const p=plan();
+  $('#planSel').innerHTML=PLANS.map(x=>`<option value="${x.id}" ${p&&x.id===p.id?'selected':''}>${esc(x.name)}</option>`).join('');
+  document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.v===VIEW));
+  $('#pname').textContent=p?p.name:'Método FMB';
+  document.title=(p?p.name+' · ':'')+'Método FMB';
+  header();
+  const v={hoje:vHoje,crono:vCrono,grade:vGrade,caderno:vCaderno,novo:vNovo,metodo:vMetodo,dados:vDados}[VIEW];
+  $('#app').innerHTML=v();
+  afterRender();
+}
+function header(){
+  const p=plan();if(!p){$('#ptxt').textContent='';return}
+  const st=p.sessions.filter(s=>s.type==='study'), done=p.sessions.filter(s=>sessDone(p,s)).length;
+  $('#pbar').style.width=(100*done/Math.max(1,p.sessions.length))+'%';
+  $('#ptxt').textContent=`${done}/${p.sessions.length} sessões concluídas`;
+  $('#pdays').textContent=`${st.filter(s=>s.date<=TODAY).length}/${st.length} aulas até hoje`;
+  const dd=diffDays(TODAY,p.exam);
+  $('#countdown').textContent=dd>0?`⏳ ${dd} dias p/ prova`:(dd===0?'🍀 Hoje é a prova!':'✔ prova realizada');
+}
+
+function milestones(p){
+  const ms=[`<span>🎯 <b>${esc(p.examName||'Prova')}: ${fmt(p.exam)}/${p.exam.slice(0,4)}</b></span>`];
+  (p.milestones||[]).forEach(m=>ms.push(`<span>${esc(m.label)} <b>${fmt(m.date)}</b></span>`));
+  ms.push(`<span>🔁 Revisão <b>semanal e acumulada</b> no horário da matéria</span>`);
+  return `<div class="mile">${ms.join('')}</div>`;
+}
+
+function topicsHTML(p,s){
+  const S=subj(p,s.sid), a=p.aulas[s.sid][s.aula-1];
+  return a.units.map(u=>{const t=S.topics[u.ti];return `<details ${a.units.length===1?'open':''}><summary>${t.hot?`<span class="hot">🔥${t.hot>1?t.hot:''}</span> `:''}${u.ti+1}. ${esc(t.title)}${u.part?` <span class="mut sm">(${u.part})</span>`:''}</summary>${u.subs.length?`<ul class="subs">${u.subs.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}</details>`}).join('');
+}
+function aulaTitle(p,sid,n){const S=subj(p,sid),a=p.aulas[sid][n-1];if(!a)return '';return a.units.map(u=>`${u.ti+1}. ${S.topics[u.ti].title}${u.part?' ('+u.part+')':''}`).join(' · ')}
+
+function sessCard(p,s){
+  const S=subj(p,s.sid);if(!S)return '';
+  const c=prog().sess[s.k]||{}, rv=reviewList(p,s), done=sessDone(p,s);
+  const nk=`${s.sid}#${s.aula}`;
+  let h=`<div class="sess${done?' done':''}" style="--c:${S.color}" data-k="${s.k}">
+   <div class="shead"><span class="subj">${esc(S.name)}</span>${s.type==='study'?`<span class="pill">Aula ${s.aula}/${p.aulas[s.sid].length}</span>`:`<span class="pill a">Revisão</span>`}</div>`;
+  if(s.type==='study'){
+    h+=`<div class="step"><b>1 · Revisão acumulada (½ do tempo)</b>`;
+    if(rv.length){
+      h+=`<div class="chips">${rv.map(a=>`<span title="${esc(aulaTitle(p,s.sid,a.n))}">Aula ${a.n}</span>`).join('')}</div>
+       <div class="sm mut">Bata o olho no caderno: ~10 s por página, todas as aulas acima.</div>
+       <div class="chk"><button data-act="flash" data-sid="${s.sid}" data-upto="${s.aula-1}">⚡ Revisão veloz</button><button data-c="r" class="${c.r?'on':''}">🔁 Revisão feita</button></div>`;
+    }else h+=`<div class="sm mut">Primeira aula da matéria — sem revisão; use o tempo todo no estudo.</div>`;
+    h+=`</div><div class="step"><b>2 · Aula nova (½ do tempo)</b>${topicsHTML(p,s)}
+      <div class="chk"><button data-c="l" class="${c.l?'on':''}" title="Ler a aula até conseguir mentalizá-la">📖 Li até mentalizar</button>
+      <button data-c="m" class="${c.m?'on':''}" title="Passar na mente o conteúdo, 2 vezes, sem olhar o caderno">🧠 2× sem olhar</button>
+      <button data-c="q" class="${c.q?'on':''}" title="Perguntas escritas por página, respondidas mentalmente">❓ Perguntas</button></div></div>
+      <div class="step"><b>✍️ Caderno — Aula ${s.aula}</b>
+      <textarea class="note" data-note="${nk}" placeholder="Anotação da aula em linguagem simples, com suas palavras (este é o material da revisão).">${esc(prog().notes[nk]||'')}</textarea>
+      <details><summary class="sm">❓ Perguntas por escrito</summary><textarea data-quest="${nk}" placeholder="Uma pergunta por linha — responda mentalmente.">${esc(prog().quest[nk]||'')}</textarea></details></div>`;
+  }else{
+    h+=`<div class="stitle">Revisão geral acumulada${rv.length?` — aulas 1 a ${rv[rv.length-1].n}`:''}</div>
+     <div class="sm mut">Matéria com o conteúdo do edital já percorrido. Revise todo o caderno (veloz) e resolva questões de provas anteriores.</div>
+     <div class="chk"><button data-act="flash" data-sid="${s.sid}" data-upto="${rv.length?rv[rv.length-1].n:0}">⚡ Revisão veloz</button><button data-c="r" class="${c.r?'on':''}">🔁 Revisão feita</button></div>`;
+  }
+  return h+`</div>`;
+}
+
+function dayCard(p,d){
+  const ss=p.sessions.filter(s=>s.date===d).sort((a,b)=>a.slot-b.slot);
+  const done=ss.every(s=>sessDone(p,s));
+  return `<article class="day${d===TODAY?' today':''}" id="d-${d}"><div class="dhead"><b>${WDL[dow(d)]}, ${fmt(d)}</b><span>${d===TODAY?'<span class="pill g">HOJE</span> ':''}${done&&ss.length?'<span class="pill g">✔ dia fechado</span>':''}</span></div>${ss.map(s=>sessCard(p,s)).join('')}</article>`;
+}
+
+/* ============================== views ============================== */
+function noPlan(){return `<div class="card"><h2>Nenhum plano</h2><p>Crie um plano em <b>➕ Novo plano</b> ou carregue o modelo.</p><button class="btn pri" data-act="loadtpl">Carregar plano-modelo (PGM Curitiba)</button></div>`}
+
+function vHoje(){
+  const p=plan();if(!p)return noPlan();
+  let h=milestones(p);
+  const late=p.sessions.filter(s=>s.date<TODAY&&!sessDone(p,s));
+  const dates=[...new Set(p.sessions.map(s=>s.date))];
+  let d=dates.find(x=>x>=TODAY);
+  if(late.length)h+=`<div class="card"><h2>⚠️ ${late.length} sessão(ões) pendente(s) de dias anteriores</h2>
+    <div class="sm mut">No método FMB a revisão é acumulada: ao chegar a próxima aula da matéria, revise todas as anteriores — não precisa "pagar" sessões atrasadas uma a uma, mas não pule a revisão.</div>
+    <div class="chips" style="margin-top:6px">${[...new Set(late.map(s=>s.date))].slice(-12).map(x=>`<span><a href="#" data-go="${x}">${fmt(x)}</a></span>`).join('')}</div></div>`;
+  if(!d){h+=`<div class="card"><h2>🎯 Cronograma concluído</h2><p>Até a prova: revisão geral veloz e acumulada de todo o caderno, matéria por matéria, na ordem da grade.</p></div>`;return h}
+  if(d!==TODAY)h+=`<div class="msg">Hoje (${WDL[dow(TODAY)]}) não há sessão na grade. Próximo dia de estudo:</div>`;
+  h+=`<div class="grid" style="grid-template-columns:1fr">${dayCard(p,d)}</div>`;
+  const nx=dates.filter(x=>x>d).slice(0,4);
+  if(nx.length)h+=`<h3>Próximos dias</h3><div class="card sm">${nx.map(x=>`<div style="margin:3px 0"><b>${WD[dow(x)]} ${fmt(x)}</b> — ${p.sessions.filter(s=>s.date===x).map(s=>{const S=subj(p,s.sid);return `<span class="tag" style="--c:${S.color}">${esc(S.name)}</span> ${s.type==='study'?'aula '+s.aula:'revisão'}`}).join(' · ')}</div>`).join('')}</div>`;
+  return h;
+}
+
+function weeks(p){const out=[];for(let m=mondayOf(p.start);m<p.exam;m=addDays(m,7))out.push(m);return out}
+function vCrono(){
+  const p=plan();if(!p)return noPlan();
+  const ws=weeks(p);
+  if(WEEK===null){const cur=mondayOf(TODAY);WEEK=Math.max(0,ws.indexOf(cur));if(WEEK<0||TODAY<p.start)WEEK=0;}
+  WEEK=Math.max(0,Math.min(ws.length-1,WEEK));
+  const m=ws[WEEK], ds=[...new Set(p.sessions.filter(s=>s.date>=m&&s.date<addDays(m,7)).map(s=>s.date))].sort();
+  const wsess=p.sessions.filter(s=>s.date>=m&&s.date<addDays(m,7)), wd=wsess.filter(s=>sessDone(p,s)).length;
+  let h=milestones(p)+`<div class="weeknav"><button class="btn" data-act="wk" data-d="-1">◀</button><b>Semana ${WEEK+1}/${ws.length}</b><span class="mut">${fmt(m)} – ${fmt(addDays(m,6))}</span><button class="btn" data-act="wk" data-d="1">▶</button><button class="btn" data-act="wknow">hoje</button><span class="pill ${wd===wsess.length&&wsess.length?'g':''}">${wd}/${wsess.length} sessões</span><button class="btn" data-act="openall">expandir</button></div>`;
+  h+=ds.length?`<div class="grid">${ds.map(d=>dayCard(p,d)).join('')}</div>`:`<div class="empty">Sem sessões nesta semana.</div>`;
+  if(m<=addDays(p.exam,-1)&&addDays(m,7)>p.exam)h+=`<div class="card" style="margin-top:14px;text-align:center">🎯 <b>${fmt(p.exam)} — ${esc(p.examName||'Prova')}</b></div>`;
+  return h;
+}
+
+function vGrade(){
+  const p=plan();if(!p)return noPlan();
+  let h=`<div class="card"><h2>🧱 Grade semanal fixa</h2><div class="sm mut">No método FMB o horário é fixo e rígido: cada matéria tem o seu dia. Em cada sessão, metade do tempo é revisão acumulada da matéria e metade é aula nova. Células com duas matérias alternam semana sim, semana não.</div>
+   <div style="overflow-x:auto;margin-top:10px"><table class="gridfix"><tr><th>Horário</th>${p.days.map(d=>`<th>${WDL[d]}</th>`).join('')}</tr>`;
+  for(let i=0;i<p.slots;i++){h+=`<tr><th>Sessão ${i+1}</th>${p.days.map(d=>{const c=(p.grid[d]||[])[i]||[];return `<td>${c.map(id=>{const S=subj(p,id);return S?`<span class="tag" style="--c:${S.color}">${esc(S.name)}</span>`:''}).join('<br><span class="sm mut">alternando com</span><br>')||'—'}</td>`}).join('')}</tr>`}
+  h+=`</table></div></div><div class="card"><h2>Matérias</h2><table class="list"><tr><th>Matéria</th><th>Peso</th><th>Tópicos</th><th>Aulas</th><th>Sessões/sem.</th><th>Revisões gerais</th></tr>`;
+  p.subjects.forEach(S=>{
+    const per=p.days.reduce((a,d)=>a+(p.grid[d]||[]).filter(c=>c.includes(S.id)).reduce((x,c)=>x+1/c.length,0),0);
+    const rv=p.sessions.filter(s=>s.sid===S.id&&s.type==='review').length;
+    h+=`<tr><td><span class="tag" style="--c:${S.color}">${esc(S.name)}</span></td><td>${S.weight}</td><td>${S.topics.length}${S.topics.some(t=>t.hot)?` <span class="hot">🔥${S.topics.filter(t=>t.hot).length}</span>`:''}</td><td>${p.aulas[S.id].length}</td><td>${+per.toFixed(1)}</td><td>${rv}</td></tr>`});
+  h+=`</table><div class="row" style="margin-top:10px"><button class="btn" data-act="editplan">✏️ Editar matérias, pesos e datas deste plano</button></div></div>`;
+  return h;
+}
+
+function vCaderno(){
+  const p=plan();if(!p)return noPlan();
+  if(!CADSUB||!subj(p,CADSUB))CADSUB=p.subjects[0].id;
+  const S=subj(p,CADSUB), A=p.aulas[S.id];
+  let h=`<div class="card"><h2>📓 Caderno de anotações</h2><div class="sm mut">"Estudar pelas anotações de aula": o caderno é o seu material de estudo e de revisão. Escreva com as suas palavras, em linguagem simples, com sequência lógica — nada de setinhas e ideias soltas.</div>
+   <div class="row" style="margin-top:8px"><select id="cadSel" class="plan">${p.subjects.map(x=>`<option value="${x.id}" ${x.id===S.id?'selected':''}>${esc(x.name)}</option>`).join('')}</select>
+   <button class="btn pri" data-act="flash" data-sid="${S.id}" data-upto="${A.length}">⚡ Revisão veloz desta matéria</button></div></div>`+exportPanel(p,S);
+  A.forEach(a=>{const k=`${S.id}#${a.n}`;h+=`<div class="card" style="border-left:4px solid ${S.color}"><div class="shead"><b>Aula ${a.n}${a.date?` · ${WD[dow(a.date)]} ${fmt(a.date)}`:''}</b></div><div class="sm" style="margin:4px 0 6px">${esc(aulaTitle(p,S.id,a.n))}</div>
+    <textarea class="note" data-note="${k}" placeholder="Anotação da aula ${a.n}">${esc(prog().notes[k]||'')}</textarea>
+    <details><summary class="sm">❓ Perguntas</summary><textarea data-quest="${k}">${esc(prog().quest[k]||'')}</textarea></details></div>`});
+  return h;
+}
+
+function vMetodo(){
+  return `<div class="card method"><h2>📘 O método FMB, em resumo</h2>
+  <div class="formula">C = E + M</div><p class="mut" style="text-align:center;margin-top:0">conhecimento = entendimento + memorização</p>
+  <h3>1. Material: anotações de aula</h3><p>O estudo é feito pelo caderno de anotações — a explicação registrada com redação e sequência lógica, como um livro, mas em linguagem simples. Para o autor, fazer cursinho sem anotar as aulas equivale a não fazer. Apostilas em linguagem acessível complementam.</p>
+  <h3>2. Grade semanal fixa</h3><p>Um horário fixo e rígido, com todas as matérias distribuídas na semana (o modelo do livro usa 2 a 3 matérias por dia). Cada matéria é estudada sempre no seu dia — é nesse mesmo horário que acontece a revisão dela.</p>
+  <h3>3. Cada sessão: metade revisão, metade aula nova</h3>
+  <ol><li><b>Revisão primeiro (½ do tempo)</b> — antes da aula nova, revise as aulas anteriores daquela matéria.</li>
+  <li><b>Estudo (½ do tempo)</b> — leia a aula até conseguir mentalizá-la sem olhar o caderno; passe o conteúdo na mente <b>duas vezes, sem olhar</b>. Se tiver dificuldade, formule perguntas por escrito em cada página e responda mentalmente.</li></ol>
+  <h3>4. As três características da revisão</h3>
+  <ul><li><b>Veloz</b> — "bater o olho" ~10 segundos por página. Não é releitura, é rememorização.</li>
+  <li><b>Semanal</b> — no horário da matéria, toda semana.</li>
+  <li><b>Acumulada</b> — sempre voltando até a 1ª aula (ou, no mínimo, às 4 aulas anteriores).</li></ul>
+  <h3>5. Outras lições do livro</h3>
+  <ul><li>A causa principal da reprovação é a falta de método, não de inteligência — e a inteligência se desenvolve.</li>
+  <li>Preparação geral antes da específica: o núcleo comum (Civil, Penal, Constitucional, Administrativo, Tributário, Trabalho, Processo Civil, Processo Penal, Empresarial) exige tempo; matérias acessórias admitem preparação de algumas semanas.</li>
+  <li>Sem tempo? Estude em dois tempos: primeiro colha o material (curso), depois assimile-o numa grade fixa.</li>
+  <li>Humildade e discrição sobre a própria preparação.</li></ul>
+  <h3>Como este app aplica o método</h3>
+  <ul><li>Gera a <b>grade fixa</b> a partir das matérias e pesos (peso = incidência na última prova ou extensão do edital).</li>
+  <li>Distribui os tópicos do edital em <b>aulas</b> sequenciais por matéria; cada sessão mostra a <b>revisão acumulada</b> (aulas 1…n-1) e a aula nova.</li>
+  <li>Checklist do estudo: 📖 li até mentalizar · 🧠 2× sem olhar · ❓ perguntas · 🔁 revisão feita.</li>
+  <li>O <b>⚡ Revisão veloz</b> passa pelo seu caderno com um cronômetro de 10 s por aula.</li>
+  <li>Quando o edital de uma matéria termina, as sessões dela viram revisão geral + questões.</li></ul>
+  <p class="sm mut">Fonte: Flávio Monteiro de Barros, <i>Método FMB</i> (cap. I a VIII). Este app não é afiliado ao Curso FMB.</p></div>`;
+}
+
+function vDados(){
+  return `<div class="card"><h2>💾 Seus dados</h2><p class="sm">Tudo fica salvo <b>neste navegador</b> (localStorage). Exporte com frequência para não perder o caderno se limpar o navegador ou trocar de aparelho.</p>
+  <div class="row"><button class="btn pri" data-act="export">⬇ Exportar tudo (JSON)</button><button class="btn" data-act="import">⬆ Importar JSON</button><input type="file" id="impf" accept=".json,application/json" hidden></div>
+  <p class="sm">Para revisar fora do app (Word, PDF, Anki), use a exportação do <a href="#" data-act="gocad">📓 Caderno</a>.</p>
+  <p class="sm mut">O importador também aceita o JSON exportado pela versão antiga ("PGM · Organizada até passar"): as anotações por dia vão para o caderno das aulas daquele dia no plano-modelo.</p></div>
+  <div class="card"><h2>Planos salvos</h2>${PLANS.map(x=>`<div class="row" style="justify-content:space-between;border-bottom:1px solid var(--line);padding:6px 0"><span><b>${esc(x.name)}</b> <span class="sm mut">${fmt(x.start)} → prova ${fmt(x.exam)}/${x.exam.slice(0,4)} · ${x.subjects.length} matérias</span></span><span class="row"><button class="btn" data-act="sel" data-id="${x.id}">abrir</button><button class="btn warn" data-act="del" data-id="${x.id}">excluir</button></span></div>`).join('')||'<div class="empty">Nenhum.</div>'}
+  <div class="row" style="margin-top:10px"><button class="btn" data-act="loadtpl">+ Adicionar plano-modelo (PGM Curitiba)</button><button class="btn warn" data-act="resetprog">Zerar progresso do plano atual</button></div></div>`;
+}
+
+/* ============================== assistente: novo plano ============================== */
+function wizDefault(){
+  const start=TODAY;
+  return {step:1,edital:null,prova:null,editalText:'',provaText:'',info:'',
+    cfg:{name:'',start,exam:addDays(start,90),examName:'Prova Objetiva',days:[1,2,3,4,5],slots:2,revWindow:'all',reserveDays:2,reviewShare:0,holidays:'',milestones:''},
+    markup:'',stats:null,editId:null};
+}
+function vNovo(){
+  if(!WIZ)WIZ=wizDefault();
+  const w=WIZ;
+  const stepNav=`<div class="row" style="margin-bottom:10px">${['1 · Arquivos','2 · Matérias e pesos','3 · Grade e datas'].map((t,i)=>`<span class="pill ${w.step===i+1?'g':''}">${t}</span>`).join('')}${w.editId?'<span class="pill a">editando plano existente</span>':''}</div>`;
+  if(w.step===1)return `<div class="card"><h2>➕ Novo plano de estudos (método FMB)</h2>${stepNav}
+   <p class="sm">Envie o <b>edital</b> (atual ou o último) e a <b>última prova</b>. O app lê os PDFs aqui mesmo no navegador, extrai as matérias e o conteúdo programático do edital e usa a prova para medir a incidência de cada matéria (peso) e marcar os tópicos que caíram (🔥).</p>
+   <div class="two">
+    <div><div class="drop ${w.edital?'ok':''}" data-act="pick" data-f="edital"><b>📄 Edital</b><span class="sm">${w.edital?esc(w.edital)+' ✔':'PDF ou TXT — clique para escolher'}</span></div>
+     <details style="margin-top:6px"><summary class="sm">…ou colar o conteúdo programático</summary><textarea id="pasteEdital" rows="6" placeholder="Cole aqui o texto do edital (conteúdo programático)">${esc(w.editalText&&!w.edital?w.editalText:'')}</textarea></details></div>
+    <div><div class="drop ${w.prova?'ok':''}" data-act="pick" data-f="prova"><b>📝 Última prova</b><span class="sm">${w.prova?esc(w.prova)+' ✔':'PDF ou TXT — opcional, mas recomendado'}</span></div>
+     <details style="margin-top:6px"><summary class="sm">…ou colar o texto da prova</summary><textarea id="pasteProva" rows="6" placeholder="Cole aqui o texto da prova">${esc(w.provaText&&!w.prova?w.provaText:'')}</textarea></details></div>
+   </div>
+   <input type="file" id="fEdital" accept=".pdf,.txt,application/pdf,text/plain" hidden><input type="file" id="fProva" accept=".pdf,.txt,application/pdf,text/plain" hidden>
+   ${w.info?`<div class="msg ${w.infoOk?'ok':''}">${w.info}</div>`:''}
+   <div class="row" style="margin-top:12px"><button class="btn pri" data-act="analyze">🔎 Analisar arquivos</button><button class="btn" data-act="analyzeai" id="aiBtn" hidden>✨ Analisar com IA</button><button class="btn" data-act="blank">Começar em branco</button><button class="btn" data-act="fromtpl">Partir do modelo PGM</button></div>
+   <p class="sm mut">PDF escaneado (imagem) não tem texto: nesse caso cole o conteúdo ou use um PDF com texto selecionável. A análise automática é uma sugestão — você revisa tudo no passo 2.</p></div>`;
+  if(w.step===2){
+    const st=w.stats;
+    return `<div class="card"><h2>Matérias, pesos e tópicos</h2>${stepNav}
+    ${st?`<div class="msg ok">${st}</div>`:''}
+    <p class="sm">Revise o texto abaixo. Formato: <code>## Matéria | peso N</code> e, embaixo, um tópico por linha: <code>- Título :: subtópico ; subtópico</code>. Marque tópicos que caíram na prova com <code>🔥</code> logo após o hífen. O <b>peso</b> define quantas sessões semanais a matéria recebe.</p>
+    <textarea id="markup" rows="22" style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px">${esc(w.markup)}</textarea>
+    <div id="mkPrev" class="sm" style="margin-top:8px"></div>
+    <div class="row" style="margin-top:10px"><button class="btn" data-act="wback">◀ Voltar</button><button class="btn pri" data-act="wnext2">Avançar ▶</button></div></div>`;
+  }
+  const c=w.cfg;
+  return `<div class="card"><h2>Grade e datas</h2>${stepNav}
+   <div class="two"><div class="fields">
+    <label class="f full">Nome do plano<input type="text" id="cName" value="${esc(c.name)}"></label>
+    <label class="f">Início dos estudos<input type="date" id="cStart" value="${c.start}"></label>
+    <label class="f">Data da prova<input type="date" id="cExam" value="${c.exam}"></label>
+    <label class="f full">Nome da prova<input type="text" id="cExamName" value="${esc(c.examName)}"></label>
+    <label class="f full"><span>Outros marcos (um por linha: <code>dd/mm/aaaa Descrição</code>)</span><textarea id="cMile" rows="3">${esc(c.milestones)}</textarea></label>
+   </div><div class="fields">
+    <div class="f full">Dias de estudo na grade<div class="daysel">${[1,2,3,4,5,6,0].map(d=>`<label><input type="checkbox" class="cDay" value="${d}" ${c.days.includes(d)?'checked':''}> ${WD[d]}</label>`).join('')}</div></div>
+    <label class="f">Matérias (sessões) por dia<input type="number" id="cSlots" min="1" max="6" value="${c.slots}"><span class="mut">o livro usa 2 a 3</span></label>
+    <label class="f">Revisão acumulada<select id="cRev"><option value="all" ${c.revWindow==='all'?'selected':''}>todas as aulas anteriores</option><option value="4" ${c.revWindow==='4'?'selected':''}>as 4 aulas anteriores</option></select></label>
+    <label class="f">Dias finais só de revisão geral<input type="number" id="cRes" min="0" max="30" value="${c.reserveDays}"></label>
+    <label class="f">% de sessões p/ revisão + questões<input type="number" id="cShare" min="0" max="50" value="${Math.round(c.reviewShare*100)}"></label>
+    <label class="f full">Feriados / dias sem estudo (dd/mm/aaaa, um por linha)<textarea id="cHol" rows="3">${esc(c.holidays)}</textarea></label>
+   </div></div>
+   <div id="gridPrev" style="margin-top:10px"></div>
+   <div class="row" style="margin-top:12px"><button class="btn" data-act="wback">◀ Voltar</button><button class="btn" data-act="preview">👁️ Pré-visualizar grade</button><button class="btn pri" data-act="create">✅ ${w.editId?'Salvar alterações':'Criar plano'}</button></div>
+   ${w.editId?'<p class="sm mut">Ao salvar, o cronograma é recalculado. O caderno é mantido por matéria/aula; marcações de sessões podem mudar de dia.</p>':''}</div>`;
+}
+
+/* ---------- markup <-> estrutura ---------- */
+function toMarkup(subjects){
+  return subjects.map(s=>`## ${s.name} | peso ${s.weight}${s.qcount!=null?`   (questões na prova: ${s.qcount})`:''}\n`+s.topics.map(t=>`- ${t.hot?'🔥'+(t.hot>1?t.hot:'')+' ':''}${t.title}${t.subs&&t.subs.length?' :: '+t.subs.join(' ; '):''}`).join('\n')).join('\n\n');
+}
+function fromMarkup(txt,old){
+  const subs=[];let cur=null;
+  txt.split(/\r?\n/).forEach(l=>{
+    const m=l.match(/^\s*##\s*(.+?)\s*(?:\|\s*peso\s*([\d.,]+))?\s*(?:\(.*\))?\s*$/i);
+    if(m){const prev=(old||[]).find(o=>norm(o.name)===norm(m[1]));cur={id:prev?prev.id:undefined,color:prev?prev.color:undefined,name:m[1].trim(),weight:parseFloat((m[2]||'1').replace(',','.'))||1,topics:[]};subs.push(cur);return}
+    const t=l.match(/^\s*[-*•]\s*(.+)$/);
+    if(t&&cur){let s=t[1].trim(),hot=0;const h=s.match(/^🔥(\d*)\s*/);if(h){hot=+h[1]||1;s=s.slice(h[0].length)}
+      const [title,rest]=s.split(/\s::\s/);cur.topics.push({title:title.trim(),subs:rest?rest.split(/\s;\s/).map(x=>x.trim()).filter(Boolean):[],hot});return}
+    if(l.trim()&&cur&&cur.topics.length){const last=cur.topics[cur.topics.length-1];last.subs.push(l.trim())}
+  });
+  return subs.filter(s=>s.topics.length);
+}
+function markupPreview(){
+  const el=$('#mkPrev');if(!el)return;
+  const s=fromMarkup($('#markup').value);
+  const W=s.reduce((a,x)=>a+x.weight,0)||1;
+  el.innerHTML=s.length?`<b>${s.length} matérias · ${s.reduce((a,x)=>a+x.topics.length,0)} tópicos</b><div class="chips">${s.map(x=>`<span>${esc(x.name)} — peso ${x.weight} (${Math.round(100*x.weight/W)}%) · ${x.topics.length} tóp.</span>`).join('')}</div>`:'<span class="msg">Nenhuma matéria reconhecida — use linhas "## Nome | peso N".</span>';
+}
+
+/* ============================================================
+   LEITURA DE ARQUIVOS (PDF via pdf.js, tudo no navegador)
+   ============================================================ */
+async function readFileText(file){
+  if(/\.txt$/i.test(file.name)||file.type==='text/plain')return await file.text();
+  if(!window.pdfjsLib)throw new Error('Leitor de PDF não carregou (sem internet?). Cole o texto manualmente.');
+  pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  const pdf=await pdfjsLib.getDocument({data:await file.arrayBuffer()}).promise;
+  const out=[];
+  for(let i=1;i<=pdf.numPages;i++){
+    const tc=await (await pdf.getPage(i)).getTextContent();
+    const rows=[];
+    tc.items.forEach(it=>{if(!it.str)return;const y=Math.round(it.transform[5]),x=it.transform[4];let r=rows.find(r=>Math.abs(r.y-y)<=3);if(!r){r={y,items:[]};rows.push(r)}r.items.push({x,s:it.str})});
+    rows.sort((a,b)=>b.y-a.y).forEach(r=>out.push(r.items.sort((a,b)=>a.x-b.x).map(i=>i.s).join(' ').replace(/\s+/g,' ').trim()));
+    out.push('');
+  }
+  return out.join('\n');
+}
+
+/* ---------- análise heurística do edital ---------- */
+const DISC_RX=/^(DIREITO|DIR\.|DIREITOS|L[IÍ]NGUA|PORTUGU|PROCESSO|PROCESSUAL|LEGISLA|NO[CÇ][OÕ]ES|RACIOC[IÍ]NIO|INFORM[AÁ]TICA|MATEM[AÁ]TICA|CONTABILIDADE|ADMINISTRA|ECONOMIA|[EÉ]TICA|ESTATUTO|CONHECIMENTOS|ATUALIDADES|FILOSOFIA|SOCIOLOGIA|CRIMINOLOGIA|MEDICINA|HIST[OÓ]RIA|GEOGRAFIA|AUDITORIA|FINAN|ESTAT[IÍ]STICA|ARQUIVOLOGIA|REALIDADE|INGL[EÊ]S|ESPANHOL|TEORIA|GEST[AÃ]O|POL[IÍ]TICAS?|CI[EÊ]NCIA|CONTROLE|ORÇAMENTO|LEI ORG|SEGURIDADE|PREVID|TRIBUT|CONSTITUC|CIVIL|PENAL|EMPRESARIAL|COMERCIAL|AMBIENTAL|URBAN|ELEITORAL|AGR[AÁ]RIO|INTERNACIONAL|HUMANÍSTICA|FORMA[CÇ][AÃ]O)/i;
+const BLACK_RX=/^(ANEXO|CONTE[UÚ]DO|EDITAL|CARGO|N[IÍ]VEL|PROVA|CRONOGRAMA|QUADRO|TABELA|P[AÁ]GINA|PREFEITURA|MUNIC[IÍ]PIO|ESTADO DO|GOVERNO|SECRETARIA|CONCURSO|CAP[IÍ]TULO|DAS? |DOS? |OBSERVA|NOTA|JURISPRUD[EÊ]NCIA E PRECEDENTES)/i;
+function capsRatio(s){const L=s.replace(/[^A-Za-zÀ-ÿ]/g,'');if(!L)return 0;return L.replace(/[^A-ZÀ-Þ]/g,'').length/L.length}
+function isHeader(l){
+  const s=l.trim();if(s.length<5)return null;
+  if(BLACK_RX.test(s))return null;
+  const words=s.split(/\s+/).length;
+  // "DIREITO ADMINISTRATIVO: 1. Teoria..."  ou  "Direito Administrativo: ..."
+  const inl=s.match(/^([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ ,\.\-–eE]{3,80}?)\s*[:–—-]\s+(.*)$/);
+  if(inl&&DISC_RX.test(inl[1])&&inl[1].split(/\s+/).length<=9&&(capsRatio(inl[1])>.6||/^\s*1[\.\)]/.test(inl[2])))return {name:inl[1],rest:inl[2]};
+  if(s.length>110)return null;
+  if(/[.;]$/.test(s)&&capsRatio(s)<.85)return null;
+  if(/\d[\.\)]\s/.test(s.slice(0,6)))return null;
+  if(capsRatio(s)>.8&&words<=12&&(DISC_RX.test(s)||words>=2))return {name:s.replace(/[:.]$/,''),rest:''};
+  return null;
+}
+function titleCase(s){if(capsRatio(s)<.8)return s.trim();const small=['de','da','do','das','dos','e','em','a','o','na','no','para','com'];return s.toLowerCase().split(/\s+/).map((w,i)=>i&&small.includes(w)?w:w.charAt(0).toUpperCase()+w.slice(1)).join(' ').replace(/\bIi\b/g,'II').replace(/\bIii\b/g,'III')}
+function splitTopics(text){
+  text=text.replace(/\s+/g,' ').trim();
+  const pos=[];let exp=1,from=0;
+  while(true){const rx=new RegExp(`(?:^|[\\s.;:])(${exp})\\s*[\\.\\)\\-–]\\s+(?=[A-Za-zÀ-ÿ"“(])`,'g');rx.lastIndex=from;const m=rx.exec(text);if(!m)break;
+    const at=m.index+m[0].indexOf(m[1]);pos.push({n:exp,at,body:at+m[0].length-(m[0].indexOf(m[1]))});exp++;from=at+1;}
+  let chunks=[];
+  if(pos.length>=2){pos.forEach((p,i)=>{chunks.push(text.slice(p.body,i+1<pos.length?pos[i+1].at:undefined).trim())})}
+  else{const sent=text.split(/(?<=[.;])\s+(?=[A-ZÀ-Ý])/).filter(x=>x.length>3);for(let i=0;i<sent.length;i+=2)chunks.push(sent.slice(i,i+2).join(' '))}
+  return chunks.filter(Boolean).map(c=>{
+    c=c.replace(/[.;\s]+$/,'');
+    let cut=c.search(/[.:;](\s|$)/);if(cut<0||cut>170)cut=Math.min(c.length,140);
+    let title=c.slice(0,cut).trim(),rest=c.slice(cut+1).trim();
+    if(title.length<4){title=c.slice(0,140);rest=c.slice(140)}
+    const subs=rest?rest.split(/(?:\s*;\s*|\.\s+(?=[A-ZÀ-Ý0-9])|\s\d{1,2}\.\d{1,2}\.?\s)/).map(x=>x.replace(/^[\s\-–•]+|[\s.]+$/g,'')).filter(x=>x.length>3):[];
+    return {title:title.replace(/^[\-–•\s]+/,''),subs};
+  });
+}
+function parseEdital(text){
+  let lines=text.split(/\n/);
+  const nl=lines.map(norm);
+  let start=0;
+  const idx=nl.map((l,i)=>/conteudo programatico|conteudos programaticos|programa das (provas|disciplinas)|objetos de avaliacao/.test(l)?i:-1).filter(i=>i>=0);
+  if(idx.length){let best=idx[0],bestScore=-1;idx.forEach(i=>{let sc=0;for(let j=i+1;j<Math.min(lines.length,i+80);j++)if(isHeader(lines[j]))sc++;if(sc>bestScore){bestScore=sc;best=i}});start=best+1}
+  lines=lines.slice(start);
+  const subs=[];let cur=null;
+  lines.forEach(l=>{const h=isHeader(l);if(h){cur={name:titleCase(h.name),buf:[h.rest]};subs.push(cur)}else if(cur)cur.buf.push(l)});
+  let out=subs.map(s=>({name:s.name,topics:splitTopics(s.buf.join(' '))})).filter(s=>s.topics.length);
+  // une cabeçalhos repetidos (quebra de página)
+  const merged=[];out.forEach(s=>{const m=merged.find(x=>norm(x.name)===norm(s.name));if(m)m.topics.push(...s.topics);else merged.push(s)});
+  return merged.filter(s=>s.topics.length>=1&&s.topics.reduce((a,t)=>a+t.title.length,0)>30);
+}
+
+/* ---------- análise da prova: incidência por matéria e tópicos que caíram ---------- */
+const STOP=new Set('para pela pelo pelos pelas como sobre entre quando qual quais seus suas esse essa este esta isso aquele aquela forma tambem ainda apenas sendo seja sera serao deve devem pode podem nao sim mais menos muito todos todas outro outra outros outras acordo assinale alternativa correta incorreta afirmativa afirmativas assertiva assertivas seguintes seguinte conforme julgue item itens questao questoes respeito caso hipotese situacao segundo termos disposto lei leis artigo artigos federal municipal estadual direito direitos publico publica publicos publicas geral gerais nacional sistema regime normas norma acerca considerando assim afirmar afirma referente legislacao vigente'.split(' '));
+function tokens(s){return norm(s).replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(w=>w.length>=5&&!STOP.has(w)&&!/^\d+$/.test(w))}
+function splitQuestions(text){
+  const lines=text.split(/\n/);const qs=[];let cur=null,last=0;
+  lines.forEach(l=>{const m=l.match(/^\s*(?:QUEST[ÃA]O\s*N?[ºo°]?\s*)?(\d{1,3})\s*(?:[\.\)\-–:]|$)\s*(.*)$/i);
+    if(m){const n=+m[1];if(n===last+1||(last===0&&n<=3)||(n>last&&n<=last+3)){cur={n,text:m[2]||'',head:null};qs.push(cur);last=n;return}}
+    if(cur)cur.text+=' '+l});
+  return qs;
+}
+function analyzeProva(text,subjects){
+  const qs=splitQuestions(text);
+  if(qs.length<5)return {ok:false,msg:'Não consegui identificar as questões da prova (numeração não encontrada).'};
+  // vocabulário por matéria, com peso IDF
+  const voc=subjects.map(s=>{const set=new Set(tokens(s.name+' '+s.topics.map(t=>t.title+' '+(t.subs||[]).join(' ')).join(' ')));return set});
+  const df={};voc.forEach(v=>v.forEach(w=>df[w]=(df[w]||0)+1));
+  const idf=w=>Math.log(1+subjects.length/(df[w]||1));
+  // cabeçalhos de matéria no corpo da prova (ex.: "DIREITO ADMINISTRATIVO")
+  const lines=text.split(/\n/);const heads=[];let qi=0;
+  const qAtLine=[];{let last=0;lines.forEach((l,i)=>{const m=l.match(/^\s*(?:QUEST[ÃA]O\s*N?[ºo°]?\s*)?(\d{1,3})\s*(?:[\.\)\-–:]|$)/i);if(m&&+m[1]>last&&+m[1]<=last+3){last=+m[1];qAtLine.push({i,n:last})}})}
+  lines.forEach((l,i)=>{const s=l.trim();if(s.length<5||s.length>90||capsRatio(s)<.8)return;
+    let best=-1,bs=0;const tk=new Set(tokens(s));subjects.forEach((S,j)=>{const st=tokens(S.name);if(!st.length)return;const hit=st.filter(w=>tk.has(w)).length/st.length;const extra=[...tk].filter(w=>!st.includes(w)).length;const sc=hit-extra*.15;if(sc>bs){bs=sc;best=j}});
+    if(best>=0&&bs>=.6){const after=qAtLine.find(q=>q.i>i);if(after)heads.push({n:after.n,j:best})}});
+  const byHead=heads.length>=2;
+  const counts=subjects.map(()=>0);const hot=subjects.map(s=>s.topics.map(()=>0));
+  qs.forEach(q=>{
+    let j=-1;
+    if(byHead){const h=heads.filter(h=>h.n<=q.n).pop();if(h)j=h.j}
+    const qt=new Set(tokens(q.text));
+    if(j<0){let bs=0;voc.forEach((v,k)=>{let sc=0;qt.forEach(w=>{if(v.has(w))sc+=idf(w)});if(sc>bs){bs=sc;j=k}});if(bs<2)j=-1}
+    if(j<0)return;counts[j]++;
+    let bt=-1,bsc=0;subjects[j].topics.forEach((t,ti)=>{let sc=0;new Set(tokens(t.title+' '+(t.subs||[]).join(' '))).forEach(w=>{if(qt.has(w))sc+=idf(w)});if(sc>bsc){bsc=sc;bt=ti}});
+    if(bt>=0&&bsc>=2.5)hot[j][bt]++;
+  });
+  return {ok:true,n:qs.length,counts,hot,byHead,classified:counts.reduce((a,b)=>a+b,0)};
+}
+
+/* ---------- análise com IA (opcional, via /api/plano na Vercel) ---------- */
+async function aiAvailable(){if(location.protocol==='file:')return false;try{const r=await fetch('/api/plano',{method:'GET'});if(!r.ok)return false;const j=await r.json();return !!j.enabled}catch(e){return false}}
+
+/* ============================== revisão veloz (modal) ============================== */
+let FL=null;
+function flashOpen(sid,upto){
+  const p=plan(),S=subj(p,sid);
+  const list=p.aulas[sid].filter(a=>a.n<=upto);
+  if(!list.length){alert('Ainda não há aulas anteriores para revisar nesta matéria.');return}
+  FL={sid,list,i:0,t:null,sec:10,paused:false};
+  flashShow();
+}
+function flashShow(){
+  const p=plan(),S=subj(p,FL.sid),a=FL.list[FL.i],k=`${FL.sid}#${a.n}`,note=prog().notes[k]||'',q=prog().quest[k]||'';
+  $('#modal').innerHTML=`<div class="modal" data-act="flclose-bg"><div class="box">
+   <div class="shead"><span class="subj" style="--c:${S.color};color:${S.color}">${esc(S.name)} · revisão veloz</span><span class="pill">${FL.i+1}/${FL.list.length}</span></div>
+   <h2 style="margin-top:6px">Aula ${a.n}</h2><div class="sm mut">${esc(aulaTitle(p,FL.sid,a.n))}</div>
+   <div class="timer"><i id="flbar"></i></div>
+   <div class="notebox">${note?esc(note):'<span class="mut">(sem anotação no caderno — passe os olhos nos tópicos acima e escreva a anotação depois)</span>'}</div>
+   ${q?`<details style="margin-top:8px"><summary class="sm">❓ Perguntas (responda mentalmente)</summary><div class="notebox" style="min-height:0">${esc(q)}</div></details>`:''}
+   <div class="row" style="margin-top:12px;justify-content:space-between"><span class="row"><button class="btn" data-act="flprev">◀</button><button class="btn" data-act="flpause">${FL.paused?'▶ continuar':'⏸ pausar'}</button><button class="btn" data-act="flnext">▶</button></span><button class="btn pri" data-act="flclose">Concluir</button></div>
+   <div class="sm mut" style="margin-top:6px">~10 segundos por aula: "bater o olho", não reler.</div></div></div>`;
+  clearInterval(FL.t);let el=0;
+  FL.t=setInterval(()=>{if(FL.paused)return;el+=.1;const b=$('#flbar');if(b)b.style.width=Math.min(100,el*10)+'%';if(el>=FL.sec){if(FL.i<FL.list.length-1){FL.i++;flashShow()}else{clearInterval(FL.t);const b2=$('#flbar');if(b2)b2.style.background='var(--green)'}}},100);
+}
+function flashClose(){if(FL)clearInterval(FL.t);FL=null;$('#modal').innerHTML=''}
+
+/* ============================== eventos ============================== */
+function afterRender(){
+  if(VIEW==='novo'){
+    const ta=$('#markup');if(ta){ta.addEventListener('input',()=>{WIZ.markup=ta.value;markupPreview()});markupPreview()}
+    if(WIZ.step===1)aiAvailable().then(ok=>{const b=$('#aiBtn');if(b&&ok)b.hidden=false});
+    ['fEdital','fProva'].forEach(id=>{const f=document.getElementById(id);if(f)f.addEventListener('change',async ev=>{
+      const file=ev.target.files[0];if(!file)return;const key=id==='fEdital'?'edital':'prova';
+      WIZ.info=`Lendo ${esc(file.name)}…`;WIZ.infoOk=false;render();
+      try{const t=await readFileText(file);WIZ[key]=file.name;WIZ[key+'Text']=t;
+        const chars=t.replace(/\s/g,'').length;
+        WIZ.info=chars<300?`⚠️ ${esc(file.name)}: quase nenhum texto extraído — provavelmente é um PDF escaneado. Cole o texto manualmente.`:`✔ ${esc(file.name)} lido (${t.length.toLocaleString('pt-BR')} caracteres).`;WIZ.infoOk=chars>=300}
+      catch(e){WIZ.info='Erro ao ler o arquivo: '+esc(e.message)}
+      render()})});
+  }
+  const cs=$('#cadSel');if(cs)cs.addEventListener('change',()=>{CADSUB=cs.value;render()});
+  const imp=$('#impf');if(imp)imp.addEventListener('change',importFile);
+}
+
+document.addEventListener('click',async ev=>{
+  const tab=ev.target.closest('#tabs button');if(tab){VIEW=tab.dataset.v;render();window.scrollTo(0,0);return}
+  const go=ev.target.closest('[data-go]');if(go){ev.preventDefault();const p=plan();VIEW='crono';WEEK=weeks(p).indexOf(mondayOf(go.dataset.go));render();setTimeout(()=>{const el=document.getElementById('d-'+go.dataset.go);if(el)el.scrollIntoView({behavior:'smooth',block:'center'})},50);return}
+  const cb=ev.target.closest('.sess [data-c]');
+  if(cb){const k=cb.closest('.sess').dataset.k,c=cb.dataset.c,P=prog();P.sess[k]=P.sess[k]||{};P.sess[k][c]=!P.sess[k][c];saveProg();
+    const p=plan(),s=p.sessions.find(x=>x.k===k);cb.classList.toggle('on',!!P.sess[k][c]);cb.closest('.sess').classList.toggle('done',sessDone(p,s));
+    const day=cb.closest('.day');if(day){const d=day.id.slice(2);const all=p.sessions.filter(x=>x.date===d).every(x=>sessDone(p,x));const sp=day.querySelector('.dhead span');if(sp)sp.innerHTML=(d===TODAY?'<span class="pill g">HOJE</span> ':'')+(all?'<span class="pill g">✔ dia fechado</span>':'')}
+    header();return}
+  const a=ev.target.closest('[data-act]');if(!a)return;
+  const act=a.dataset.act;
+  if(act==='flclose-bg'){if(ev.target===a)flashClose();return}
+  switch(act){
+    case 'wk':WEEK+=+a.dataset.d;render();break;
+    case 'wknow':WEEK=null;render();break;
+    case 'openall':document.querySelectorAll('.sess details').forEach(d=>d.open=true);break;
+    case 'flash':flashOpen(a.dataset.sid,+a.dataset.upto);break;
+    case 'flnext':if(FL.i<FL.list.length-1){FL.i++;flashShow()}break;
+    case 'flprev':if(FL.i>0){FL.i--;flashShow()}break;
+    case 'flpause':FL.paused=!FL.paused;a.textContent=FL.paused?'▶ continuar':'⏸ pausar';break;
+    case 'flclose':flashClose();break;
+    case 'loadtpl':loadTemplate();VIEW='hoje';render();break;
+    case 'sel':CUR=a.dataset.id;savePlans();WEEK=null;VIEW='hoje';render();break;
+    case 'del':{const p=PLANS.find(x=>x.id===a.dataset.id);if(p&&confirm(`Excluir o plano "${p.name}" e todo o seu caderno?`)){PLANS=PLANS.filter(x=>x.id!==p.id);delete PROG[p.id];if(CUR===p.id)CUR=PLANS[0]?.id||null;savePlans();saveProg();render()}break}
+    case 'resetprog':{const p=plan();if(p&&confirm('Zerar marcações, caderno e perguntas do plano atual?')){PROG[p.id]={sess:{},notes:{},quest:{}};saveProg();render()}break}
+    case 'export':exportAll();break;
+    case 'import':$('#impf').click();break;
+    case 'exp':{const o=expOpts();if(!o)break;const fmt=a.dataset.f;try{if(fmt==='docx')await exportDocx(o);else if(fmt==='pdf')exportPdf(o);else if(fmt==='md')exportText(o,'md');else if(fmt==='txt')exportText(o,'txt');else if(fmt==='anki')exportAnki(o)}catch(e){alert('Erro na exportação: '+e.message)}break}
+    case 'gocad':VIEW='caderno';render();window.scrollTo(0,0);break;
+    case 'editplan':{const p=plan();WIZ=wizDefault();WIZ.editId=p.id;WIZ.step=2;WIZ.markup=toMarkup(p.subjects);
+      Object.assign(WIZ.cfg,{name:p.name,start:p.start,exam:p.exam,examName:p.examName||'',days:p.days,slots:p.slots,revWindow:p.revWindow||'all',reserveDays:p.reserveDays||0,reviewShare:p.reviewShare||0,
+        holidays:(p.holidays||[]).map(d=>d.split('-').reverse().join('/')).join('\n'),milestones:(p.milestones||[]).map(m=>m.date.split('-').reverse().join('/')+' '+m.label).join('\n')});
+      VIEW='novo';render();break}
+    case 'pick':document.getElementById(a.dataset.f==='edital'?'fEdital':'fProva').click();break;
+    case 'blank':WIZ.markup='## Direito Constitucional | peso 3\n- Teoria da Constituição :: Conceito ; Classificação ; Eficácia das normas\n- Direitos e garantias fundamentais\n\n## Direito Administrativo | peso 3\n- Princípios da Administração Pública\n- Atos administrativos';WIZ.stats=null;WIZ.step=2;render();break;
+    case 'fromtpl':WIZ.markup=toMarkup(TEMPLATE.subjects);WIZ.stats='Matérias do plano-modelo carregadas. Ajuste à vontade.';WIZ.cfg.name=TEMPLATE.name+' (cópia)';WIZ.cfg.exam=TEMPLATE.exam;WIZ.cfg.examName=TEMPLATE.examName;WIZ.step=2;render();break;
+    case 'analyze':await doAnalyze(false);break;
+    case 'analyzeai':await doAnalyze(true);break;
+    case 'wback':captureCfg();WIZ.step--;render();break;
+    case 'wnext2':WIZ.markup=$('#markup').value;if(!fromMarkup(WIZ.markup).length){alert('Nenhuma matéria reconhecida.');break}WIZ.step=3;if(!WIZ.cfg.name)WIZ.cfg.name='Meu plano FMB';render();break;
+    case 'preview':captureCfg();previewGrid();break;
+    case 'create':captureCfg();createPlan();break;
+  }
+});
+document.addEventListener('input',ev=>{
+  const t=ev.target;
+  if(t.dataset.note||t.dataset.quest){
+    const P=prog(),bag=t.dataset.note?P.notes:P.quest,k=t.dataset.note||t.dataset.quest;
+    bag[k]=t.value;clearTimeout(t._tm);t._tm=setTimeout(saveProg,350);
+  }
+});
+document.addEventListener('keydown',ev=>{if(!FL)return;if(ev.key==='Escape')flashClose();if(ev.key==='ArrowRight'&&FL.i<FL.list.length-1){FL.i++;flashShow()}if(ev.key==='ArrowLeft'&&FL.i>0){FL.i--;flashShow()}});
+$('#planSel').addEventListener('change',e=>{CUR=e.target.value;savePlans();WEEK=null;render()});
+
+/* ============================== ações do assistente ============================== */
+async function doAnalyze(useAI){
+  const pe=$('#pasteEdital'),pp=$('#pasteProva');
+  if(pe&&pe.value.trim()&&!WIZ.edital)WIZ.editalText=pe.value;
+  if(pp&&pp.value.trim()&&!WIZ.prova)WIZ.provaText=pp.value;
+  if(!WIZ.editalText.trim()){WIZ.info='Envie ou cole o edital primeiro.';WIZ.infoOk=false;render();return}
+  let subjects=[],note='';
+  if(useAI){
+    WIZ.info='✨ Analisando com IA… (pode levar até 1 minuto)';WIZ.infoOk=false;render();
+    try{const r=await fetch('/api/plano',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({edital:WIZ.editalText.slice(0,180000),prova:WIZ.provaText.slice(0,120000)})});
+      const j=await r.json();if(!r.ok)throw new Error(j.error||r.status);
+      subjects=(j.subjects||[]).map(s=>({name:s.name,weight:+s.weight||+s.questions||1,qcount:s.questions??null,topics:(s.topics||[]).map(t=>({title:t.title,subs:t.subs||[],hot:t.hot?1:0}))}));
+      if(j.exam_date&&/^\d{4}-\d{2}-\d{2}$/.test(j.exam_date))WIZ.cfg.exam=j.exam_date;
+      if(j.exam_name)WIZ.cfg.examName=j.exam_name;if(j.title)WIZ.cfg.name=j.title;
+      note=`IA: ${subjects.length} matérias. ${j.notes?esc(j.notes):''}`;
+    }catch(e){WIZ.info='Falha na análise com IA ('+esc(e.message)+'). Usando a análise automática local.';useAI=false}
+  }
+  if(!useAI){
+    subjects=parseEdital(WIZ.editalText).map(s=>({...s,weight:s.topics.length,qcount:null}));
+    if(!subjects.length){WIZ.info='Não reconheci as matérias do edital automaticamente. Vá em "Começar em branco" e cole/organize o conteúdo no formato do passo 2, ou use a análise com IA.';WIZ.infoOk=false;WIZ.markup=WIZ.editalText.slice(0,20000);render();return}
+    note=`Edital: ${subjects.length} matérias, ${subjects.reduce((a,s)=>a+s.topics.length,0)} tópicos reconhecidos.`;
+    if(WIZ.provaText.trim()){
+      const r=analyzeProva(WIZ.provaText,subjects);
+      if(r.ok){subjects.forEach((s,j)=>{s.qcount=r.counts[j];s.weight=r.counts[j]>0?r.counts[j]:Math.max(1,Math.round(s.topics.length/3));s.topics.forEach((t,ti)=>t.hot=r.hot[j][ti])});
+        note+=` Prova: ${r.n} questões, ${r.classified} atribuídas às matérias (${r.byHead?'pelos títulos das seções':'por vocabulário'}); peso = nº de questões; 🔥 = tópico que caiu.`}
+      else note+=' '+r.msg+' Peso = nº de tópicos.';
+    }else note+=' Sem prova: peso = nº de tópicos.';
+  }
+  WIZ.markup=toMarkup(subjects);WIZ.stats=note+' Confira e ajuste antes de avançar.';WIZ.info='';WIZ.step=2;render();
+}
+function dmyList(txt){return (txt||'').split(/\n/).map(l=>l.trim()).filter(Boolean).map(l=>{const m=l.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})\s*(.*)$/);return m?{date:`${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`,label:m[4].trim()}:null}).filter(Boolean)}
+function captureCfg(){
+  if(WIZ.step===2){const ta=$('#markup');if(ta)WIZ.markup=ta.value;return}
+  if(WIZ.step!==3)return;const c=WIZ.cfg;
+  c.name=$('#cName').value.trim();c.start=$('#cStart').value;c.exam=$('#cExam').value;c.examName=$('#cExamName').value.trim();
+  c.days=[...document.querySelectorAll('.cDay:checked')].map(x=>+x.value);c.slots=+$('#cSlots').value||2;c.revWindow=$('#cRev').value;
+  c.reserveDays=+$('#cRes').value||0;c.reviewShare=Math.max(0,Math.min(.5,(+$('#cShare').value||0)/100));c.holidays=$('#cHol').value;c.milestones=$('#cMile').value;
+}
+function cfgToBase(){
+  const c=WIZ.cfg,old=WIZ.editId?PLANS.find(p=>p.id===WIZ.editId):null;
+  return {id:WIZ.editId||('p'+uid()),name:c.name||'Meu plano FMB',start:c.start,exam:c.exam,examName:c.examName,days:c.days,slots:c.slots,revWindow:c.revWindow,reserveDays:c.reserveDays,reviewShare:c.reviewShare,
+    holidays:dmyList(c.holidays).map(x=>x.date),milestones:dmyList(c.milestones).map(x=>({date:x.date,label:x.label||'Marco'})),subjects:fromMarkup(WIZ.markup,old?old.subjects:null)};
+}
+function validate(b){
+  if(!b.start||!b.exam||b.exam<=b.start)return 'A data da prova precisa ser posterior ao início.';
+  if(!b.days.length)return 'Escolha ao menos um dia de estudo.';
+  if(!b.subjects.length)return 'Nenhuma matéria.';return null;
+}
+function previewGrid(){
+  const b=cfgToBase(),err=validate(b);if(err){alert(err);return}
+  const p=generate(b);const nd=new Set(p.sessions.map(s=>s.date)).size;
+  let h=`<div class="msg ok">${nd} dias de estudo · ${p.sessions.length} sessões · ${p.sessions.filter(s=>s.type==='study').length} aulas novas · ${p.sessions.filter(s=>s.type==='review').length} sessões de revisão geral</div><div style="overflow-x:auto"><table class="gridfix"><tr><th></th>${p.days.map(d=>`<th>${WDL[d]}</th>`).join('')}</tr>`;
+  for(let i=0;i<p.slots;i++)h+=`<tr><th>${i+1}</th>${p.days.map(d=>`<td>${((p.grid[d]||[])[i]||[]).map(id=>{const S=subj(p,id);return `<span class="tag" style="--c:${S.color}">${esc(S.name)}</span>`}).join('<br>')}</td>`).join('')}</tr>`;
+  h+='</table></div>';
+  const short=p.subjects.filter(S=>p.aulas[S.id].some(a=>a.units.length>1));
+  if(short.length)h+=`<div class="msg">Em ${short.map(s=>esc(s.name)).join(', ')} há mais tópicos que sessões: alguns tópicos foram agrupados numa mesma aula. Para aliviar, aumente as matérias por dia, os dias da semana ou o peso dessas matérias.</div>`;
+  $('#gridPrev').innerHTML=h;
+}
+function createPlan(){
+  const b=cfgToBase(),err=validate(b);if(err){alert(err);return}
+  const p=generate(b);
+  if(WIZ.editId){const i=PLANS.findIndex(x=>x.id===WIZ.editId);PLANS[i]=p}else PLANS.push(p);
+  CUR=p.id;savePlans();WIZ=null;WEEK=null;VIEW='grade';render();window.scrollTo(0,0);
+}
+
+
+/* ============================== exportar caderno e perguntas ============================== */
+function exportPanel(p,S){
+  const P=prog();let nn=0,nq=0;
+  Object.entries(P.notes).forEach(([k,v])=>{if(v&&v.trim()&&p.aulas[k.split('#')[0]])nn++});
+  Object.entries(P.quest).forEach(([k,v])=>{if(v&&p.aulas[k.split('#')[0]])nq+=v.split(/\n/).filter(x=>x.trim()).length});
+  return `<div class="card expbox"><h2>📤 Exportar caderno e perguntas para revisão</h2>
+   <div class="sm mut">${nn} aula(s) com anotação · ${nq} pergunta(s) neste plano.</div>
+   <div class="opt"><span><b>Matérias:</b></span>
+     <label><input type="radio" name="exScope" value="sub" checked> só ${esc(S.name)}</label>
+     <label><input type="radio" name="exScope" value="all"> todas</label></div>
+   <div class="opt"><span><b>Conteúdo:</b></span>
+     <label><input type="radio" name="exWhat" value="full" checked> caderno completo (tópicos + anotação + perguntas)</label>
+     <label><input type="radio" name="exWhat" value="notes"> só anotações</label>
+     <label><input type="radio" name="exWhat" value="quest"> só perguntas (folha de revisão)</label></div>
+   <div class="opt"><label><input type="checkbox" id="exFilled" checked> pular aulas sem anotação/pergunta</label>
+     <label><input type="checkbox" id="exLines"> deixar linhas para responder (PDF/Word)</label></div>
+   <div class="row"><button class="btn pri" data-act="exp" data-f="docx">📄 Word (.docx)</button><button class="btn" data-act="exp" data-f="pdf">🖨️ PDF / imprimir</button>
+     <button class="btn" data-act="exp" data-f="md">Markdown (.md)</button><button class="btn" data-act="exp" data-f="txt">Texto (.txt)</button>
+     <button class="btn" data-act="exp" data-f="anki" title="arquivo para importar no Anki: frente = pergunta, verso = matéria/aula/tópico + sua anotação">🃏 Cartões Anki (.txt)</button></div>
+   <p class="sm mut" style="margin-bottom:0">No PDF, escolha "Salvar como PDF" na janela de impressão. O arquivo do Anki é importado em Arquivo → Importar (separado por tabulação, com HTML).</p></div>`;
+}
+function expOpts(){
+  const p=plan();if(!p)return null;
+  const scope=(document.querySelector('input[name=exScope]:checked')||{}).value||'sub';
+  const what=(document.querySelector('input[name=exWhat]:checked')||{}).value||'full';
+  return {p,scope,what,filled:!!($('#exFilled')||{}).checked,lines:!!($('#exLines')||{}).checked};
+}
+function qLines(t){return String(t||'').split(/\n/).map(x=>x.replace(/^\s*(\d+[\.\)]|[-*•])\s*/,'').trim()).filter(Boolean)}
+function collect(o){
+  const p=o.p,P=prog();
+  const subs=o.scope==='all'?p.subjects:[subj(p,CADSUB||p.subjects[0].id)];
+  return subs.map(S=>({S,aulas:p.aulas[S.id].map(a=>{const k=`${S.id}#${a.n}`;return {n:a.n,date:a.date,
+     topics:a.units.map(u=>`${u.ti+1}. ${S.topics[u.ti].title}${u.part?' ('+u.part+')':''}`),
+     note:(P.notes[k]||'').trim(),qs:qLines(P.quest[k])}}).filter(a=>{
+       if(!o.filled)return true;
+       if(o.what==='quest')return a.qs.length>0;if(o.what==='notes')return !!a.note;return !!a.note||a.qs.length>0})})).filter(g=>g.aulas.length);
+}
+function expTitle(o){const p=o.p;return o.what==='quest'?'Perguntas de revisão':'Caderno de anotações'}
+function expFile(o,ext){const p=o.p;const base=(o.scope==='all'?p.name:subj(p,CADSUB).name)+' - '+(o.what==='quest'?'perguntas':'caderno');return base.replace(/[\\/:*?"<>|]+/g,'').replace(/\s+/g,' ').trim().slice(0,90)+' '+TODAY+'.'+ext}
+function download(name,blob){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000)}
+function emptyCheck(g){if(!g.length){alert('Nada para exportar com essas opções. Desmarque "pular aulas sem anotação" ou escreva no caderno primeiro.');return true}return false}
+const aulaHead=a=>`Aula ${a.n}${a.date?' — '+WDL[dow(a.date)]+', '+fmt(a.date)+'/'+a.date.slice(0,4):''}`;
+
+function exportText(o,kind){
+  const g=collect(o);if(emptyCheck(g))return;const md=kind==='md';const L=[];
+  L.push(md?`# ${expTitle(o)} — ${o.p.name}`:`${expTitle(o).toUpperCase()} — ${o.p.name}`);
+  L.push(`Exportado em ${fmt(TODAY)}/${TODAY.slice(0,4)} · Método FMB`,'');
+  g.forEach(({S,aulas})=>{
+    L.push(md?`## ${S.name}`:`\n==== ${S.name.toUpperCase()} ====`,'');
+    aulas.forEach(a=>{
+      L.push(md?`### ${aulaHead(a)}`:`--- ${aulaHead(a)} ---`);
+      L.push(md?`*${a.topics.join(' · ')}*`:a.topics.join(' · '),'');
+      if(o.what!=='quest'&&a.note)L.push(a.note,'');
+      if(o.what!=='notes'&&a.qs.length){if(o.what==='full')L.push(md?'**Perguntas**':'Perguntas:');a.qs.forEach((q,i)=>L.push(`${i+1}. ${q}`));L.push('')}
+    });
+  });
+  download(expFile(o,md?'md':'txt'),new Blob(['﻿'+L.join('\n')],{type:md?'text/markdown;charset=utf-8':'text/plain;charset=utf-8'}));
+}
+
+function exportAnki(o){
+  const g=collect({...o,what:'quest',filled:true});
+  const rows=[];const h=s=>esc(s).replace(/\t/g,' ').replace(/\n/g,'<br>');
+  g.forEach(({S,aulas})=>aulas.forEach(a=>a.qs.forEach(q=>{
+    const back=`<b>${h(S.name)} · Aula ${a.n}</b><br><i>${h(a.topics.join(' · '))}</i>${a.note?'<hr>'+h(a.note):''}`;
+    rows.push(`${h(q)}\t${back}\t${('FMB::'+S.name).replace(/\s+/g,'_')}`)})));
+  if(!rows.length){alert('Nenhuma pergunta escrita para virar cartão.');return}
+  const head='#separator:tab\n#html:true\n#columns:Frente\tVerso\tTags\n#tags column:3\n';
+  download(expFile({...o,what:'quest'},'txt').replace('perguntas','anki'),new Blob([head+rows.join('\n')],{type:'text/plain;charset=utf-8'}));
+}
+
+function exportPdf(o){
+  const g=collect(o);if(emptyCheck(g))return;
+  const ln=n=>o.lines?Array.from({length:n},()=>'<div class="ln"></div>').join(''):'';
+  let h=`<h1>${esc(expTitle(o))}</h1><div class="sub">${esc(o.p.name)} · exportado em ${fmt(TODAY)}/${TODAY.slice(0,4)} · Método FMB</div>`;
+  g.forEach(({S,aulas})=>{h+=`<h2>${esc(S.name)}</h2>`;aulas.forEach(a=>{
+    h+=`<div class="aula"><h3>${esc(aulaHead(a))}</h3><p class="tp">${esc(a.topics.join(' · '))}</p>`;
+    if(o.what!=='quest')h+=a.note?`<div class="nt">${esc(a.note)}</div>`:(o.lines?ln(6):'<p class="sub">(sem anotação)</p>');
+    if(o.what!=='notes'&&a.qs.length)h+=`${o.what==='full'?'<p><b>Perguntas</b></p>':''}<ol>${a.qs.map(q=>`<li>${esc(q)}${ln(2)}</li>`).join('')}</ol>`;
+    h+='</div>'})});
+  $('#printArea').innerHTML=h;document.body.classList.add('printing');
+  const done=()=>{document.body.classList.remove('printing');$('#printArea').innerHTML='';window.removeEventListener('afterprint',done)};
+  window.addEventListener('afterprint',done);setTimeout(()=>window.print(),50);
+}
+
+function loadDocx(){
+  if(window.docx)return Promise.resolve(window.docx);
+  const tryLoad=src=>new Promise((ok,fail)=>{const sc=document.createElement('script');sc.src=src;sc.onload=()=>window.docx?ok(window.docx):fail();sc.onerror=fail;document.head.appendChild(sc)});
+  return tryLoad('lib/docx.iife.js').catch(()=>tryLoad('https://cdn.jsdelivr.net/npm/docx@9.10.0/dist/index.iife.js'));
+}
+async function exportDocx(o){
+  const g=collect(o);if(emptyCheck(g))return;
+  let D;try{D=await loadDocx()}catch(e){alert('Não consegui carregar o gerador de Word. Use PDF ou Markdown.');return}
+  const {Document,Packer,Paragraph,TextRun,HeadingLevel,AlignmentType,LevelFormat,BorderStyle,PageBreak,Footer,PageNumber}=D;
+  const font='Garamond';
+  const P=(text,opt={})=>new Paragraph({spacing:{after:opt.after??100},alignment:opt.align,children:[new TextRun({text,font,size:opt.size||24,bold:opt.bold,italics:opt.italics,color:opt.color})]});
+  const line=()=>new Paragraph({spacing:{after:0},border:{bottom:{style:BorderStyle.SINGLE,size:4,color:'999999',space:8}},children:[new TextRun({text:' ',font,size:24})]});
+  const kids=[P(expTitle(o),{size:36,bold:true,after:60}),P(`${o.p.name} · exportado em ${fmt(TODAY)}/${TODAY.slice(0,4)} · Método FMB`,{size:20,color:'666666',after:240})];
+  let ref=0;const numbering=[];
+  g.forEach(({S,aulas},gi)=>{
+    if(gi>0)kids.push(new Paragraph({children:[new PageBreak()]}));
+    kids.push(new Paragraph({heading:HeadingLevel.HEADING_1,spacing:{before:120,after:160},children:[new TextRun({text:S.name,font,size:32,bold:true})]}));
+    aulas.forEach(a=>{
+      kids.push(new Paragraph({heading:HeadingLevel.HEADING_2,keepNext:true,spacing:{before:240,after:60},children:[new TextRun({text:aulaHead(a),font,size:26,bold:true})]}));
+      kids.push(new Paragraph({keepNext:true,spacing:{after:120},children:[new TextRun({text:a.topics.join(' · '),font,size:21,italics:true,color:'555555'})]}));
+      if(o.what!=='quest'){
+        if(a.note)a.note.split(/\n/).forEach(t=>kids.push(P(t,{after:60})));
+        else if(o.lines)for(let i=0;i<6;i++)kids.push(line());
+      }
+      if(o.what!=='notes'&&a.qs.length){
+        if(o.what==='full')kids.push(P('Perguntas',{bold:true,after:60}));
+        const r='q'+(ref++);numbering.push({reference:r,levels:[{level:0,format:LevelFormat.DECIMAL,text:'%1.',alignment:AlignmentType.LEFT,style:{paragraph:{indent:{left:540,hanging:360}}}}]});
+        a.qs.forEach(q=>{kids.push(new Paragraph({numbering:{reference:r,level:0},spacing:{after:60},children:[new TextRun({text:q,font,size:24})]}));if(o.lines){kids.push(line());kids.push(line())}});
+      }
+    });
+  });
+  const doc=new Document({creator:'Método FMB',title:expTitle(o),
+    styles:{default:{document:{run:{font,size:24}}},paragraphStyles:[
+      {id:'Heading1',name:'Heading 1',basedOn:'Normal',next:'Normal',quickFormat:true,run:{font,size:32,bold:true},paragraph:{spacing:{before:120,after:160},outlineLevel:0}},
+      {id:'Heading2',name:'Heading 2',basedOn:'Normal',next:'Normal',quickFormat:true,run:{font,size:26,bold:true},paragraph:{spacing:{before:240,after:60},outlineLevel:1}}]},
+    numbering:{config:numbering},
+    sections:[{properties:{page:{size:{width:11906,height:16838},margin:{top:1418,right:1134,bottom:1134,left:1701}}},
+      footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.RIGHT,children:[new TextRun({children:[PageNumber.CURRENT],font,size:18,color:'888888'})]})]})},
+      children:kids}]});
+  download(expFile(o,'docx'),await Packer.toBlob(doc));
+}
+
+/* ============================== modelo, exportar, importar ============================== */
+function loadTemplate(){
+  const b={...JSON.parse(JSON.stringify(TEMPLATE)),id:'pgm-'+uid(),days:[1,2,3,4,5],slots:3,revWindow:'all',reserveDays:1,reviewShare:0,holidays:[]};
+  b.subjects.forEach((s,i)=>s.color=PALETTE[i%PALETTE.length]);
+  const p=generate(b);PLANS.push(p);CUR=p.id;savePlans();return p;
+}
+function exportAll(){
+  const blob=new Blob([JSON.stringify({app:'metodo-fmb',versao:3,exportado:new Date().toISOString(),plans:PLANS,prog:PROG,cur:CUR},null,1)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='metodo-fmb-'+TODAY+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+function importFile(ev){
+  const f=ev.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const j=JSON.parse(r.result);
+    if(j.app==='metodo-fmb'){
+      if(!confirm('Mesclar os planos do arquivo com os deste navegador? (planos com o mesmo id serão substituídos)'))return;
+      (j.plans||[]).forEach(p=>{const i=PLANS.findIndex(x=>x.id===p.id);if(i>=0)PLANS[i]=p;else PLANS.push(p)});Object.assign(PROG,j.prog||{});CUR=j.cur||CUR;
+    }else if(j.app==='pgm-organizada-fmb'||j.notes||j.days){
+      let p=PLANS.find(x=>x.name===TEMPLATE.name)||loadTemplate();const P=PROG[p.id]=PROG[p.id]||{sess:{},notes:{},quest:{}};let n=0;
+      Object.entries(j.notes||{}).forEach(([d,txt])=>{if(!txt)return;const s=p.sessions.find(x=>x.date===d&&x.type==='study');if(!s)return;const k=`${s.sid}#${s.aula}`;P.notes[k]=(P.notes[k]?P.notes[k]+'\n\n':'')+`[anotação de ${fmt(d)}]\n`+txt;n++});
+      CUR=p.id;alert(`${n} anotação(ões) da versão antiga importada(s) para o caderno do plano-modelo.`);
+    }else throw new Error('formato não reconhecido');
+    savePlans();saveProg();render();}catch(e){alert('Erro ao ler JSON: '+e.message)}ev.target.value=''};
+  r.readAsText(f);
+}
+
+/* ============================== início ============================== */
+if(!PLANS.length&&TEMPLATE)loadTemplate();
+if(!plan())CUR=PLANS[0]?.id||null;
+render();
+</script>
+</body>
+</html>
