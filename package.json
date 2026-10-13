@@ -1,0 +1,7 @@
+{
+  "name": "metodo-fmb-plano",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plano de estudos para concursos pelo método FMB (Prof. Flávio Monteiro de Barros)",
+  "engines": { "node": ">=18" }
+}
